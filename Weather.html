@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <title>WeatherNow!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather Now!</h1>
+    </header>
+      <div class="row">
+        <form class="form-inline">          
+          <div class="form-group mb-2">
+            <label for="Search">Search for a City</label>
+            <input type="city.id" link id="list" herf="city.list.json.gz" class="form-control" id="Search">
+            <button class="btn btn-outline-primary">❔</button>          
+          </div>          
+          <div class="form-group mb">
+Hypertext Markup Language (HTML) is the standard markup language for documents designed to be
+displayed in a web browser. It 
+can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+Web browsers receive HTML documents from a web server or from local storage and render the documents into 
+multimedia web pages. HTML describes the structure of a web page semantically and originally 
+included cues for the appearance of the document.
+HTML elements are the building blocks of HTML pages. With HTML constructs, images and other 
+objects such as interactive forms may be embedded into the rendered page. HTML provides a means 
+to create structured documents by denoting structural semantics for text such as headings, 
+paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags,
+written using angle brackets. Tags such as directly introduce content into the page. 
+Other tags such as surround and provide information about document text and may include 
+other tags as sub-elements. Browsers do not display the HTML tags, but use them to interpret 
+the content of the page.
+HTML can embed programs written in a scripting language such as JavaScript, which affects the 
+behavior and content of web pages. Inclusion of CSS defines the look and layout of content. 
+The World Wide Web Consortium (W3C), former maintainer of the HTML and 
+current maintainer of the CSS standards, has encouraged the use of CSS 
+over explicit presentational HTML since 1997.[2]
+<!-- Add uv -->
+            <div class="search"></div>
+            <div class="icon"></div>
+            <div class="wind"></div>
+            <div class="humidity"></div>
+            <div class="temp"></div>           
+          </div>          
+        </form>
+      </div>
+<!-- add "uv5" -->
+      <div class="row">5-day Forcast:</div>
+        <div class="col">Hypertext Markup Language (HTML) is the standard markup 
+language for documents designed to be displayed in a web browser. 
+It can be assisted by technologies such as Cascading Style Sheets 
+(CSS) and scripting languages such as JavaScript.
+Web browsers receive HTML documents from a web server or from local 
+storage and render the documents into multimedia web pages. HTML describes the structure of 
+a web page semantically and originally included cues for the appearance of the document.
+HTML elements are the building blocks of HTML pages. With HTML constructs, images 
+nd other objects such as interactive forms may be embedded into the rendered page. 
+HTML provides a means to create structured documents by denoting structural semantics 
+for text such as headings, paragraphs, lists, links, quotes and other items. HTML 
+elements are delineated by tags, written using angle brackets. Tags such as  directly
+introduce content into the page. Other tags such as <p> surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags, but use them to interpret the content of the page.
+HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997.[2]
+          <div id="city5"></div>
+          <div class="icon5" ></div>
+          <div class="wind5"></div>
+          <div class="humidity5"></div>
+          <div class="temp5"></div> 
+        </div>    
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+      var APIKey = "aebb5d26802a628c2c9505d48a24648a"
+      var queryURL = "https://api.openweathermap.org/data/2.5/weather?q= ❔ &APPID=" + APIKey;
+      var queryURL2= "https://api.openweathermap.org/data/2.5/forecast?id= ❔ &APPID=" + APIKey;
+//OpenWeatherMap API weather?
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      .then(function(response) {
+        console.log(queryURL);
+        console.log(response);
+
+// Transfer content to HTML -add uv
+        $(".search").html("<h1>" + response.name + " Weather </h1>");
+        $(".icon").text("icon: " + response.main.icon);
+        $(".wind").text("Wind Speed: " + response.wind.speed);
+        $(".humidity").text("Humidity: " + response.main.humidity);
+        $(".temp").text("Temperature: " + response.main.temp);
+       
+      
+        console.log("icon: " + response.main.icon);
+        console.log("Wind Speed: " + response.wind.speed);
+        console.log("Humidity: " + response.main.humidity);
+        console.log("Temperature: " + response.main.temp);
+      });  
+//OpenWeatherMap API forcast?
+      $.ajax({
+      url: queryURL2,
+      method: "GET"
+      })
+      .then( function (list) {
+
+        console.log(queryURL2);
+        console.log(list);
+
+// Transfer content to HTML add uv5
+        $("search").html("<h1>" + list.name + " 5-DAY</h1>");
+        $(".icon5").text("icon5: " + list.main.icon);
+        $(".wind5").text("Wind Speed5: " + list.wind.speed);
+        $(".humidity5").text("Humidity5: " + list.main.humidity);
+        $(".temp5").text("Temperature5 " + list.main.temp);
+      
+        console.log("icon5: " + list.main.icon);
+        console.log("Wind Speed5: " + response.wind.speed);
+        console.log("Humidity5: " + response.main.humidity);
+        console.log("Temperature5: " + list.main.temp);
+      });
+  
+    </script>
+  </div>
+</body>
+
+</html>
+
+<!-- Notes 
+-WHEN I search for a city I get current and future conditions
+
+-Also that city is added to the search history
+
+-WHEN I view current weather conditions for that city I see:
+---city name
+---the date
+---an icon representing weather conditions
+---the temperature
+---the humidity
+---the wind speed
+---the UV index
+
+-WHEN I view the UV index is shows color that gives conditions (favorable, moderate, severe)
+
+-WHEN I view future weather conditions I see 
+---5-day forecast with date
+---weather icon
+---temperature
+---humidity
+
+-WHEN I click on a city in the search history, I am presented with that citys info.
+
+-WHEN I open the weather dashboard, I am presented with the last searched city forecast
+Notes
+----us bootstrap !! dont forget call tag -->

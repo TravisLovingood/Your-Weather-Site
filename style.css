@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color:#388c81;
+}
+
+html,
+.wrapper {
+  font-size: x-large;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+header { 
+  background-color:#cc52ab;
+  text-align: center;
+  padding: 20px;
+  padding-top: 0px;
+  color: hsl(206, 17%, 28%);
+}
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+    margin: 16px 0px 0px 0px;
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 500px) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
