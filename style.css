@@ -1,12 +1,8 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
   font-family: sans-serif;
-  background-color:#2ca05c;
+  background-color:#575757;
+  color: hsl(0, 0%, 0%);
 }
 
 html,
@@ -19,11 +15,11 @@ html,
 }
 
 header { 
-  background-color:#5128e7;
+  background-color:blue;
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(0, 0%, 100%);
 }
 
 @media (max-width: 690px) {
@@ -37,4 +33,26 @@ header {
   .btn {
     font-size: 0.8rem;
   }
+}
+
+.current-box{
+  display: block;
+  background-color:blue;
+  color: white;
+}
+.title-inline{
+  display: inline-block;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.forecast-box{
+  background-color: blue ;
+  color: white;
+  display: inline-block;
+  margin:5px;
+  padding: 5px;
+}
+.forecast-box img{
+  height:45px;
 }

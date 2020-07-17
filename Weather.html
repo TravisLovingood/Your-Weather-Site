@@ -2,115 +2,61 @@
 <html lang="en">
 
 <head>
-  
-  <meta charset="utf-8">
-  <title>Your Weather!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>⚡Your Weather!</title>
 </head>
 
 <body>
-  
   <header>
-    <h1>⚡Your Weather!⚡</h1>
+    <h1 style="text-align: center"><u>⚡Your Weather!⚡</u></h1>
   </header>
-  <div class="container">
-    <div class="row">
 
-      <div class="col mb-2">
-        <label for="Search">Search a City🌪</label>
-        <input type="city.id" class="form-control" id ="Search">
-        <button class="btn btn-outline-primary" id="button">❔</button>  
+  <main>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">              
+        <h4 style="text-align: center;">Search a City🌪</h4>
+        </div>
+        <div class="col-lg-4"></div>
       </div>
-         
-      <div class="col mb">
-        <div class="search"></div>
-        <div class="icon"></div>
-        <div class="wind">💨</div>
-        <div class="humidity">💦</div>
-        <div class="temp">🌡</div>   
-        <div class="UV">☀</div>        
-      </div>          
+
+      <div class="row"> 
+
+        <div class="col-lg-3">
+          <div class="history">
+            <li class="search-city-li">History</li>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <input type="city.id" class="form-control" id ="Search">
+        </div>    
+        <div class="col lg-2">
+          <button class="btn btn-outline-primary" id="button">❔</button>
+        </div>
+        <div class="col-lg-4">
+          <div id="current-day" class="current-box"> 
+          </div> 
+                 
+      </div>
+
+      <div class="row">
+        <div class="col lg-1"></div>
+          <div id="forecast-box"></div>
+      </div>
     </div>
 
-    <div class="row">5-day Forcast:</div>
-      <div class="col">
-        <div id="city5"></div>
-        <div class="icon5" ></div>
-        <div class="wind5">💨</div>
-        <div class="humidity5">💦</div>
-        <div class="temp5">🌡</div>
-        <div class="UV5">☀</div> 
-      </div>          
-    </div>
+  </main>
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!--Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--JavaScript-->
+    <script src="weather.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    
-      $(document).ready(function() {  
-        $("#button").on("click", function() {
-
-//OpenWeatherMap Weather API below. Working.
-
-          var searchInput= "search"
-          var APIKey = "aebb5d26802a628c2c9505d48a24648a"
-          var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=London&APPID=" + APIKey;
-
-          $.ajax({
-            url: queryURL,
-            method: "GET"
-          })
-      
-          .then(function(response) {
-            console.log(queryURL);
-            console.log(response);
-
-            $(".search").html("<h1>" + response.name + " Weather </h1>");
-            $(".icon").text("icon: " + response.main.icon);
-            $(".wind").text("💨Wind Speed: " + response.wind.speed);
-            $(".humidity").text("💦Humidity: " + response.main.humidity);
-            $(".temp").text("🌡Temperature: " + response.main.temp);
-            $(".UV").text("☀UV: " + response.sys.sunrise);
-      
-            console.log("icon: " + response.main.icon);
-            console.log("💨Wind Speed: " + response.wind.speed);
-            console.log("💦Humidity: " + response.main.humidity);
-            console.log("🌡Temperature: " + response.main.temp);
-            console.log("☀UV: " + response.sys.sunrise);
-          });    
-            
-//OpenWeatherMap Forcast API below. Not Working.
-
-            var APIKey = "aebb5d26802a628c2c9505d48a24648a"
-            var queryURL2= "https://api.openweathermap.org/data/2.5/forecast?q=London&APPID=" + APIKey;
-            
-            $.ajax({
-              url: queryURL2,
-              method: "GET"
-            })
-
-          .then( function (response) {
- 
-            console.log(queryURL2);
-            console.log(list);
-
-            $("search").html("<h1>" + list.name + " 5-DAY</h1>");
-            $(".icon5").text("icon5: " + list.main.icon);
-            $(".wind5").text("Wind Speed5: " + list.wind.speed);
-            $(".humidity5").text("Humidity5: " + list.main.humidity);
-            $(".temp5").text("Temperature5 " + list.main.temp);
-
-            console.log("icon5: " + list.main.icon);
-            console.log("Wind Speed5: " + response.wind.speed);
-            console.log("Humidity5: " + response.main.humidity);
-            console.log("Temperature5: " + list.main.temp);
-
-          });
-        });
-      });  
-    </script>
-  </div>
 </body>
-
-</html>

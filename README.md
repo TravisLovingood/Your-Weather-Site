@@ -1,6 +1,6 @@
 # Your-Weather-Site
 
-![Your Weather Site!](./pics/Weather.PNG)
+![Your Weather Site!](./pics/     )
 
 
 ## Description
