@@ -1,6 +1,6 @@
 # Your-Weather-Site
 
-![Your Weather Site!](./pics/     )
+![Your Weather Site!](./pics/weather.PNG)      
 
 
 ## Description
@@ -38,5 +38,5 @@ Travis Lovingood
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact [Your-Weather-Site](https://github.com/TravisLovingood/Your-Weather-Site) directly at undefined.
+If you have any questions about the repo, open an issue or contact [Your-Weather-Site](https://github.com/TravisLovingood/Your-Weather-Site) directly.
 
