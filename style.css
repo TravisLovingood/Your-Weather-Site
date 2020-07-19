@@ -1,5 +1,14 @@
-
+body{
+  background-image: url(https://wordpress.accuweather.com/wp-content/uploads/2020/06/cropped-GettyImages-940296124.jpg);
+     background-repeat:no-repeat;
+     background-size:cover;
+     background-attachment: fixed;
+  }
 body {
+  background-image: url
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
   font-family: sans-serif;
   background-color:#575757;
   color: hsl(0, 0%, 0%);
