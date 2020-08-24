@@ -42,8 +42,8 @@ header {
 
 .current-box{
   display: block;
-  background-color: white;
-  color:rgb(37, 93, 168);
+  background-color: rgb(37, 93, 168);
+  color:white;
 }
 .title-inline{
   display: inline-block;
