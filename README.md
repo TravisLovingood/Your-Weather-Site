@@ -20,7 +20,7 @@ This is a user friendly dashboard that runs with a third-party API ([Openweather
 
 ## Usage
 
-Go to my [Your-Weather-Site](https://travislovingood.github.io/Password-Generator/) and enjoy.
+Go to my [Your-Weather-Site](https://travislovingood.github.io/Your-Weather-Site/) and enjoy.
 
 ## Installation
 
