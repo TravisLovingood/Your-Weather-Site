@@ -4,7 +4,7 @@
 
 ## Description
 
-This is a user friendly dashboard that runs using a third-party API ([Openweathermap.org](https://openweathermap.org/)) to retrieve weather forecast data. Users simply enter the name of the city to searches for the current and 5 day forecast. Your Weather runs featuring dynamically updated HTML, CSS, and localStorage. 
+This is a user friendly dashboard that runs with a third-party API ([Openweathermap.org](https://openweathermap.org/)) to retrieve weather forecast data. Users simply enter the name of a city to searches for the current and 5 day forecast. Your Weather also runs featuring dynamically updated HTML, CSS, and localStorage. 
 
 ## Table of Contents 
 

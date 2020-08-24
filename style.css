@@ -45,6 +45,7 @@ header {
   background-color: rgb(37, 93, 168);
   color:white;
 }
+
 .title-inline{
   display: inline-block;
   font-size: large;
@@ -52,8 +53,8 @@ header {
 }
 
 .forecast-box{
-  background-color:  white;
-  color: rgb(37, 93, 168);
+  background-color: rgb(37, 93, 168);
+  color: white;
   display: inline-block;
   margin:5px;
   padding: 5px;
